@@ -1,38 +1,75 @@
 <!doctype html>
-<html lang="lv">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BLSVCS</title>
-    <meta name="description" content="BLSVCS — official website." />
+    <title>BLSVCS — THE SIGNAL</title>
+    <meta name="description" content="BLSVCS. Built quietly. Meant to move loudly. Phase 01 — signal detected from Jelgava, est. 1976." />
+    <meta name="author" content="BLSVCS" />
     <link rel="canonical" href="https://www.blsvcs.lv/" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <meta property="og:title" content="BLSVCS" />
-    <meta property="og:description" content="BLSVCS — official website." />
+    <meta property="og:title" content="BLSVCS — THE SIGNAL" />
+    <meta property="og:description" content="Not announced. Not explained. Not yet. Phase 01 — signal detected." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.blsvcs.lv/" />
     <meta property="og:image" content="https://www.blsvcs.lv/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BLSVCS" />
-    <meta name="twitter:description" content="BLSVCS — official website." />
+    <meta name="twitter:title" content="BLSVCS — THE SIGNAL" />
+    <meta name="twitter:description" content="Not announced. Not explained. Not yet." />
     <meta name="twitter:image" content="https://www.blsvcs.lv/og.png" />
+    <meta name="theme-color" content="#111214" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="home-kinetic">
-      <div class="home-glow home-glow-warm" aria-hidden="true"></div>
-      <div class="home-glow home-glow-cool" aria-hidden="true"></div>
-      <div class="home-orbit home-orbit-one" aria-hidden="true"></div>
-      <div class="home-orbit home-orbit-two" aria-hidden="true"></div>
-      <div class="home-orbit home-orbit-three" aria-hidden="true"></div>
+    <main class="signal" id="signal">
+      <div class="atmosphere" aria-hidden="true"></div>
+      <div class="rings parallax-deep" aria-hidden="true"></div>
+      <div class="hairlines parallax-mid" aria-hidden="true"></div>
+      <div class="halo" aria-hidden="true"></div>
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="surge" id="surge" aria-hidden="true">
+        <div class="danger-flash"></div>
+        <div class="danger-scan"></div>
+        <div class="danger-wrap"><span class="danger-word">Dangerous</span></div>
+      </div>
 
-      <section class="home-brand" aria-labelledby="brand-name">
-        <h1 id="brand-name" class="home-wordmark">
-          <span class="home-initial">B</span>
-          <span class="home-rest">LSVCS</span>
-          <span class="home-signature" aria-hidden="true"></span>
-        </h1>
-      </section>
+      <span class="vertical-secret" aria-hidden="true">The sweetest perfection</span>
+
+      <div class="frame">
+        <header class="topline rise">
+          <span>The Signal</span>
+          <span class="counter" id="counter">01 / 06</span>
+        </header>
+
+        <section class="hero">
+          <div class="orbit parallax-near" aria-hidden="true"></div>
+          <h1 class="wordmark rise parallax-word">BLSVCS</h1>
+          <div class="rule rise" aria-hidden="true"></div>
+          <div class="line-stage" aria-live="polite" role="status">
+            <p class="line" id="line">THE NAME IS INCOMPLETE.</p>
+          </div>
+          <div class="signal-action">
+            <button class="signal-button" id="signalButton" type="button" aria-label="Signal">
+              <span></span>
+            </button>
+            <div class="noticed" id="noticed">
+              <p>You noticed.</p>
+              <small>Something dangerous.</small>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer rise">
+          <span>Phase 01 — Signal Detected</span>
+          <span class="muted">Jelgava · 56.65° N · 23.7167° E · Est. 1976</span>
+          <span class="frequency">Frequency 93.0 · Mode: Dangerous</span>
+        </footer>
+      </div>
     </main>
   </body>
 </html>
