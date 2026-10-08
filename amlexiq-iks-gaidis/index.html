@@ -1,0 +1,31 @@
+<!doctype html><html lang="lv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AMLEXIQ ADVOCATE – IKS anketa</title><style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;color:#17202a;margin:0}.w{max-width:760px;margin:auto;padding:28px 16px}.c{background:#fff;border:1px solid #d9dee7;border-radius:12px;padding:18px;margin:14px 0}h1{font-size:26px}h2{font-size:19px}.q{margin:14px 0}label{font-weight:600;display:block;margin-bottom:6px}input,textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid #ccd3dd;border-radius:8px;font-size:15px}textarea{min-height:80px}.opts{display:flex;gap:8px;flex-wrap:wrap}.opts label{font-weight:400;border:1px solid #ccd3dd;padding:8px 10px;border-radius:8px}.opts input{width:auto}.note{background:#eef3f8;padding:10px;border-radius:8px}.btn{width:100%;padding:13px;border:0;border-radius:9px;background:#1f3a5f;color:#fff;font-weight:700;font-size:15px}.muted{color:#667085;font-size:14px}</style></head>
+<body><div class="w"><div class="muted"><b>AMLEXIQ ADVOCATE</b></div><h1>IKS precizēšanas anketa – SIA “ZAB Gaidis Bērziņš”</h1><p class="muted">Lūdzu, nenorādiet klientu vārdus, lietu numurus vai citu klientu noslēpumu. Aizpildīšana ~5–10 min.</p><form id="f"><div id="app"></div><div class="c"><button class="btn" type="submit">Sagatavot e-pastu ar atbildēm</button><p class="muted">Atbildes netiek glabātas šajā lapā. Poga atvērs Jūsu e-pasta programmu ar sagatavotu vēstuli uz AB Astimato.</p></div></form></div>
+<script>
+const YN=["Jā","Nē","Nezinu"], data=[
+["1. Atbildīgā persona",[
+["atbildiga","NILLTPFN un sankciju Atbildīgā persona","choice",["Gaidis Bērziņš","Cita persona"]],
+["atbildiga_cita","Ja cita persona – vārds, uzvārds un amats","text"],
+["aizvietotajs","Vai prombūtnes laikā paredzēts aizvietotājs?","choice",YN],
+["aizvietotajs_kas","Ja jā – persona/amats","text"]]],
+["2. Biroja sastāvs",[
+["advokati","Zvērinātu advokātu skaits","number"],["paligi","Zvērinātu advokātu palīgu skaits","number"],["juristi","Juristu skaits","number"],["citi","Administratīvo/citu darbinieku skaits","number"],["piekluve","Kuriem ir piekļuve klientu lietām vai AML/KYC informācijai?","area"]]],
+["3. Klientu profils",[
+["fiz","Fiziskas personas, %","number"],["jur","Juridiskas personas, %","number"],["lv","Latvijas klienti, %","number"],["es","ES/EEZ klienti, %","number"],["tresas","Trešo valstu klienti, %","number"],["nerez","Vai nerezidenti ir regulāra klientu grupa?","choice",YN],["valstis","Tipiskākās ārvalstis","text"]]],
+["4. Ģeogrāfiskie un sankciju riski",[
+["krievija","Saikne ar Krieviju","choice",YN],["baltkrievija","Saikne ar Baltkrieviju","choice",YN],["highrisk","Citas augsta riska trešās valstis","choice",YN],["tax","Zemu nodokļu/beznodokļu teritorijas","choice",YN],["citasjur","Citas paaugstināta sankciju/korupcijas riska jurisdikcijas","choice",YN],["jurisd","Ja kādā punktā “Jā”, norādiet valstis/jurisdikcijas","area"]]],
+["5. Norēķini un klienta līdzekļi",[
+["__note","Skaidras naudas norēķini: NĒ (jau precizēts)","note"],["crypto","Birojs pieņem kriptoaktīvus par juridisko palīdzību","choice",YN],["thirdparty","Trešā persona var apmaksāt Biroja rēķinu klienta vietā","choice",YN],["clientfunds","Birojs tur vai pārvalda klienta naudu/citus klienta līdzekļus","choice",YN],["clientpay","Birojs klienta vārdā veic maksājumus","choice",YN],["deposit","Birojam ir atsevišķs klientu līdzekļu/depozīta konts","choice",YN]]],
+["6. Dokumentu glabāšana",[
+["__note2","Pašlaik klientu lietas tiek glabātas papīra formā.","note"],["paper","Papīra lietu glabāšanas vieta/veids","area"],["paperaccess","Kam ir piekļuve papīra lietām?","text"],["ecopy","Vai AML/KYC dokumentiem vai klientu lietām ir elektroniskas kopijas?","choice",YN],["ecopywhere","Ja jā, kur tās glabā?","text"],["backup","Vai elektroniskajiem datiem tiek veidotas rezerves kopijas?","choice",["Jā","Nē","Neattiecas","Nezinu"]]]],
+["7. goAML",[
+["goaml","Vai SIA “ZAB Gaidis Bērziņš” ir reģistrēts FID goAML?","choice",YN],["goamlwho","Ja jā, kam ir piekļuve/kurš var iesniegt ziņojumu?","text"]]],
+["8. NILLTPFN un sankciju apmācības",[
+["train_date","Pēdējo apmācību datums (drīkst būt aptuvens)","text"],["train_topic","Apmācību organizētājs/tēma","text"],["train_cert","Vai ir saglabāts apliecinājums/sertifikāts?","choice",YN]]],
+["9. Ārpakalpojumi un IT piekļuve",[
+["accountant","Ārējs grāmatvedis","choice",YN],["it","IT administrators/IT atbalsta sniedzējs","choice",YN],["cloud","Mākoņpakalpojuma sniedzējs","choice",YN],["other","Cits ārpakalpojuma sniedzējs","choice",YN],["outs_desc","Ja kādā punktā “Jā” – pakalpojuma sniedzējs un īsi piekļuves apjoms","area"]]]
+];
+const app=document.getElementById("app");
+for(const [title,qs] of data){const s=document.createElement("section");s.className="c";s.innerHTML="<h2>"+title+"</h2>";for(const [n,l,t,o] of qs){if(t==="note"){s.innerHTML+='<div class="note">'+l+"</div>";continue}const d=document.createElement("div");d.className="q";d.innerHTML="<label>"+l+"</label>";if(t==="choice"){const x=document.createElement("div");x.className="opts";for(const v of o){const z=document.createElement("label");z.innerHTML='<input type="radio" name="'+n+'" value="'+v+'"> '+v;x.appendChild(z)}d.appendChild(x)}else if(t==="area"){const x=document.createElement("textarea");x.name=n;d.appendChild(x)}else{const x=document.createElement("input");x.type=t;x.name=n;if(t==="number"){x.min=0;x.max=100}d.appendChild(x)}s.appendChild(d)}app.appendChild(s)}
+document.getElementById("f").onsubmit=e=>{e.preventDefault();const fd=new FormData(e.target),lines=['AMLEXIQ ADVOCATE – IKS precizēšanas anketa','SIA "ZAB Gaidis Bērziņš"','','Skaidras naudas norēķini: NĒ',''];for(const [title,qs] of data){lines.push(title);for(const [n,l,t] of qs){if(t==="note")continue;const v=fd.get(n);if(v&&String(v).trim())lines.push(l+": "+String(v).trim())}lines.push("")}location.href="mailto:abastimato@gmail.com?subject="+encodeURIComponent("AMLEXIQ ADVOCATE – IKS anketa – Gaidis Bērziņš")+"&body="+encodeURIComponent(lines.join("\n"))}
+</script></body></html>
